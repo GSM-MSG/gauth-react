@@ -39,6 +39,14 @@ class GauthApi {
 
     return res.json()
   }
+
+  async errorHandling(query: () => Promise<any>) {
+    try {
+      return query()
+    } catch (e) {
+      console.log(e)
+    }
+  }
 }
 
 export default GauthApi
