@@ -1,2 +1,2 @@
-export { default as GauthLogin } from './components/GauthLogin'
+export { default as GauthLoginButton } from './components/GauthLoginButton'
 export * from './store/GauthContext'

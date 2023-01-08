@@ -8,7 +8,7 @@ interface Prop extends BtnStyle {
   children?: any // TODO any 지우기
 }
 
-const GauthLogin = ({
+const GauthLoginButton = ({
   children,
   rounded = 'lg',
   theme = 'default',
@@ -29,4 +29,4 @@ const GauthLogin = ({
   return <>{copyElement}</>
 }
 
-export default GauthLogin
+export default GauthLoginButton
