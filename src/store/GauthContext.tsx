@@ -3,12 +3,11 @@ import GauthServiceDataType from '../type/GauthServiceDataType'
 
 const GauthContext = createContext<GauthServiceDataType | null>(null)
 
-interface Prop {
+interface Prop extends GauthServiceDataType {
   children: ReactNode
-  gauthServiceData: GauthServiceDataType
 }
 
-export const GauthProvider = ({ children, gauthServiceData }: Prop) => {
+export const GauthProvider = ({ children, ...gauthServiceData }: Prop) => {
   const [data, _] = useState<GauthServiceDataType>(gauthServiceData)
 
   return <GauthContext.Provider value={data}>{children}</GauthContext.Provider>
