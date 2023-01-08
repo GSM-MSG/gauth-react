@@ -14,7 +14,7 @@ const GauthLogin = ({
 }: Prop) => {
   if (!children) return <Button rounded={rounded} theme={theme} text={text} />
 
-  const copyElement = React.cloneElement(children, {
+  const copyElement = React.cloneElement(React.Children.only(children), {
     onClick: () => console.log('hello'),
   })
   return <>{copyElement}</>
