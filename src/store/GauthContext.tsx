@@ -1,4 +1,10 @@
-import { ReactNode, createContext, useState, useContext } from 'react'
+import {
+  ReactNode,
+  createContext,
+  useState,
+  useContext,
+  useEffect,
+} from 'react'
 import GauthServiceDataType from '../type/GauthServiceDataType'
 
 const GauthContext = createContext<GauthServiceDataType | null>(null)
@@ -9,6 +15,15 @@ interface Prop extends GauthServiceDataType {
 
 export const GauthProvider = ({ children, ...gauthServiceData }: Prop) => {
   const [data, _] = useState<GauthServiceDataType>(gauthServiceData)
+
+  useEffect(() => {
+    const { location } = window
+    if (!data || data.redirectUri !== location.origin + location.pathname)
+      return
+
+    const code = location.search.split('?code=')[1]
+    console.log(code)
+  }, [])
 
   return <GauthContext.Provider value={data}>{children}</GauthContext.Provider>
 }
