@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Logo from '../asset/Logo'
 import '../style/buttonStyle.css'
 import BtnStyle from '../type/BtnStyle'
@@ -9,18 +9,21 @@ interface Prop extends BtnStyle {
 
 const Button = ({ rounded, theme, text, onClick }: Prop) => {
   const [styles, setStyles] = useState<React.CSSProperties>({})
-  if (theme === 'white')
-    setStyles({
-      background: 'white',
-      color: '#2E80CC',
-    })
-  else if (theme === 'black')
-    setStyles({
-      background: 'white',
-      color: '#000',
-      border: '1px solid #000',
-    })
-  else setStyles({})
+
+  useEffect(() => {
+    if (theme === 'white')
+      setStyles({
+        background: 'white',
+        color: '#2E80CC',
+      })
+    else if (theme === 'black')
+      setStyles({
+        background: 'white',
+        color: '#000',
+        border: '1px solid #000',
+      })
+    else setStyles({})
+  }, [])
 
   return (
     <button
