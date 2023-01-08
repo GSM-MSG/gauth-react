@@ -3,7 +3,11 @@ import Logo from '../asset/Logo'
 import '../style/buttonStyle.css'
 import BtnStyle from '../type/BtnStyle'
 
-const Button = ({ rounded, theme, text }: BtnStyle) => {
+interface Prop extends BtnStyle {
+  onClick: () => void
+}
+
+const Button = ({ rounded, theme, text, onClick }: Prop) => {
   const [styles, setStyles] = useState<React.CSSProperties>({})
   if (theme === 'white')
     setStyles({
@@ -22,6 +26,7 @@ const Button = ({ rounded, theme, text }: BtnStyle) => {
     <button
       style={{ borderRadius: rounded === 'lg' ? '0.5rem' : '2rem', ...styles }}
       className='gauth-signin-btn'
+      onClick={onClick}
     >
       <Logo color={styles?.color || '2E80CC'} /> {text} with GAuth
     </button>

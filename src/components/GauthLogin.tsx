@@ -1,5 +1,7 @@
 import React from 'react'
+import { useGauthData } from '../store/GauthContext'
 import BtnStyle from '../type/BtnStyle'
+import serverUrl from '../util/serverUrl'
 import Button from './Button'
 
 interface Prop extends BtnStyle {
@@ -12,10 +14,17 @@ const GauthLogin = ({
   theme = 'default',
   text = 'Sign in',
 }: Prop) => {
-  if (!children) return <Button rounded={rounded} theme={theme} text={text} />
+  const data = useGauthData()
+  const onClick = () =>
+    (window.location.href = `${serverUrl}/login?client_id=${data.clientId}&redirect_url=${data.redirectUri}`)
+
+  if (!children)
+    return (
+      <Button rounded={rounded} theme={theme} text={text} onClick={onClick} />
+    )
 
   const copyElement = React.cloneElement(React.Children.only(children), {
-    onClick: () => console.log('hello'),
+    onClick,
   })
   return <>{copyElement}</>
 }
