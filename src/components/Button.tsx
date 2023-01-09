@@ -31,7 +31,7 @@ const Button = ({ rounded, theme, text, onClick }: Prop) => {
       className='gauth-signin-btn'
       onClick={onClick}
     >
-      <Logo color={styles?.color || '#2E80CC'} /> {text} with GAuth
+      <Logo color={styles?.color || '#ffffff'} /> {text} with GAuth
     </button>
   )
 }
