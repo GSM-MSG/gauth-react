@@ -1,6 +1,6 @@
 interface BtnStyle {
   rounded?: 'lg' | 'full'
-  theme?: 'default' | 'white' | 'black'
+  theme?: 'default' | 'white' | 'outline'
   text?: 'Sign in' | 'Sign up' | 'Continue'
 }
 

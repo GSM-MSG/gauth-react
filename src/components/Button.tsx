@@ -16,11 +16,11 @@ const Button = ({ rounded, theme, text, onClick }: Prop) => {
         background: 'white',
         color: '#2E80CC',
       })
-    else if (theme === 'black')
+    else if (theme === 'outline')
       setStyles({
         background: 'white',
-        color: '#000',
-        border: '1px solid #000',
+        color: '#2E80CC',
+        border: '1px solid #2E80CC',
       })
     else setStyles({})
   }, [])

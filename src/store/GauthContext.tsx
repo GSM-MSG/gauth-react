@@ -31,7 +31,11 @@ export const GauthProvider = ({
 
   useEffect(() => {
     const { location } = window
-    if (!data || data.redirectUri !== location.origin + location.pathname)
+    if (
+      !data ||
+      data.redirectUri !==
+        location.origin + (location.pathname === '/' ? '' : location.pathname)
+    )
       return
 
     const code = location.search.split('?code=')[1]

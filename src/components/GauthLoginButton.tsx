@@ -16,7 +16,7 @@ const GauthLoginButton = ({
 }: Prop) => {
   const data = useGauthData()
   const onClick = () =>
-    (window.location.href = `${serverUrl}/login?client_id=${data.clientId}&redirect_url=${data.redirectUri}`)
+    (window.location.href = `${serverUrl}/login?client_id=${data.clientId}&redirect_uri=${data.redirectUri}`)
 
   if (!children)
     return (
