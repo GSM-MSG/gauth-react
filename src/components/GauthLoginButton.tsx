@@ -29,4 +29,4 @@ const GauthLoginButton = ({
   return <>{copyElement}</>
 }
 
-export default GauthLoginButton
+export default React.memo(GauthLoginButton)
