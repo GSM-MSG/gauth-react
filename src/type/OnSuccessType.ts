@@ -1,9 +1,3 @@
-import UserType from './UserType'
-
-type OnSuccessType = (
-  user: UserType,
-  accessToken: string,
-  refreshToken: string
-) => void
+type OnSuccessType = (code: string) => Promise<void>
 
 export default OnSuccessType
