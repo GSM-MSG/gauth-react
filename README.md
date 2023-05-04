@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>GAuth - Node</h1>
+  <h1>GAuth - React</h1>
 
   <p>단 하나의 계정으로 <strong>광주소프트웨어마이스터고등학교</strong>의 모든 서비스를 이용할 수 있게</p>
 </div>
@@ -14,10 +14,12 @@
 
 ## 🛠️ Installation
 
-```
+```bash
 // npm
 > npm i @msg-team/gauth-react
 
 // yarn
 > yarn add @msg-team/gauth-react
 ```
+
+## 🙋 How to use
