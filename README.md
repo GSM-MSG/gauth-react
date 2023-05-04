@@ -23,3 +23,34 @@
 ```
 
 ## 🙋 How to use
+
+[codesandbox example](https://codesandbox.io/p/sandbox/intelligent-bash-bynhop)
+
+```tsx
+// index.tsx
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <GauthProvider
+    redirectUri='http://localhost:3000'
+    clientId='client id'
+    onSuccess={async (code) => {
+      console.log(code)
+    }}
+  >
+    <App />
+  </GauthProvider>
+)
+```
+
+```tsx
+// SomeComponent.tsx
+
+import { GauthLoginButton } from '@msg-team/gauth-react'
+import '@msg-team/gauth-react/dist/index.css'
+
+function SomeComponent() {
+  return <GauthLoginButton />
+}
+
+export default SomeComponent
+```
