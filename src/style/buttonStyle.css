@@ -3,9 +3,8 @@
   align-items: center !important;
   justify-content: center !important;
   gap: 1rem !important;
-  width: 100% !important;
-  max-width: 17rem !important;
-  max-height: 5rem !important;
+  width: 17rem !important;
+  height: 5rem !important;
   white-space: nowrap !important;
   background: #2e80cc;
   color: white;
