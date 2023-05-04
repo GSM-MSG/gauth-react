@@ -9,7 +9,9 @@
   "author": "chanwoo00106 <byun00106@naver.com> (https://github.com/chanwoo00106)",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -20,6 +22,13 @@
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-url": "^8.0.1",
+    "@storybook/addon-essentials": "^7.0.8",
+    "@storybook/addon-interactions": "^7.0.8",
+    "@storybook/addon-links": "^7.0.8",
+    "@storybook/blocks": "^7.0.8",
+    "@storybook/react": "^7.0.8",
+    "@storybook/react-webpack5": "^7.0.8",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "@types/jest": "^29.2.5",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
@@ -28,17 +37,19 @@
     "@typescript-eslint/parser": "^5.48.0",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-storybook": "^0.6.12",
     "prettier": "^2.8.1",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^3.9.1",
     "rollup-plugin-import-css": "^3.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.34.1",
+    "storybook": "^7.0.8",
     "tslib": "^2.4.1",
     "typescript": "^4.9.4"
   },
-  "dependencies": {},
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
