@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { useGauthData } from '../store/GauthContext'
 import BtnStyle from '../type/BtnStyle'
 import serverUrl from '../util/serverUrl'
 import Button from './Button'
 
 interface Prop extends BtnStyle {
-  children?: any // TODO any 지우기
+  children?: ReactElement
 }
 
 const GauthLoginButton = ({
