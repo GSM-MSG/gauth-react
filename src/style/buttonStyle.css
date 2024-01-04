@@ -1,18 +1,39 @@
+:root {
+  --gauth-blue: #2e80cc;
+  --gauth-white: #ffffff;
+}
+
 .gauth-signin-btn {
+  border-radius: 0.5rem;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 1rem !important;
-  width: 17rem !important;
+  max-width: 17rem !important;
+  width: 100% !important;
   height: 3.125rem !important;
   white-space: nowrap !important;
-  background: #2e80cc;
-  color: white;
   cursor: pointer !important;
   font-size: 1rem !important;
-  border-radius: 0.5rem;
   padding: 0.7rem 0 !important;
   font-weight: 600 !important;
   outline: none !important;
+}
+
+.gauth-signin-btn-default {
+  background: var(--gauth-blue);
+  color: var(--gauth-white);
   border: none;
+}
+
+.gauth-signin-btn-white {
+  background: var(--gauth-white);
+  color: var(--gauth-blue);
+  border: none;
+}
+
+.gauth-signin-btn-outline {
+  background: var(--gauth-white);
+  color: var(--gauth-blue);
+  border: 1px solid var(--gauth-blue);
 }

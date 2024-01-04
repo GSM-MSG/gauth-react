@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import Logo from '../asset/Logo'
 import '../style/buttonStyle.css'
 import BtnStyle from '../type/BtnStyle'
@@ -8,30 +7,18 @@ interface Prop extends BtnStyle {
 }
 
 const Button = ({ rounded, theme, text, onClick }: Prop) => {
-  const [styles, setStyles] = useState<React.CSSProperties>({})
-
-  useEffect(() => {
-    if (theme === 'white')
-      setStyles({
-        background: 'white',
-        color: '#2E80CC',
-      })
-    else if (theme === 'outline')
-      setStyles({
-        background: 'white',
-        color: '#2E80CC',
-        border: '1px solid #2E80CC',
-      })
-    else setStyles({})
-  }, [])
-
   return (
     <button
-      style={{ borderRadius: rounded === 'lg' ? '0.5rem' : '2rem', ...styles }}
-      className='gauth-signin-btn'
+      style={{
+        borderRadius: rounded === 'lg' ? '0.5rem' : '2rem',
+      }}
+      className={`gauth-signin-btn gauth-signin-btn-${theme}`}
       onClick={onClick}
     >
-      <Logo color={styles?.color || '#ffffff'} /> {text} with GAuth
+      <Logo
+        color={theme === 'default' ? 'var(--gauth-white)' : 'var(--gauth-blue)'}
+      />{' '}
+      {text} with GAuth
     </button>
   )
 }
